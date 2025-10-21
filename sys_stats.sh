@@ -12,11 +12,18 @@
     # 2. Kernel Release
     # 3. Kernel Version
     # 4. The operating system
+    > kernel
+    echo "Kernel Name: $(uname -s)" >> kernel
+    echo "Kernel Release: $(uname -r)" >> kernel
+    echo "Kernel Version: $(uname -v)" >> kernel
+    echo "Operating System:: $(cat /etc/os-release | grep "PRETTY_NAME" | cut -d "=" -f 2 | tr -d '"')" >> kernel
 
 
 # Output the following information to a file called network
     # 1. Do not print any serial numbers or sensitive information related to the system
     # 2. All network interfaces
+    > network
+    echo "Network Interface Info: $(lspci)" >> network
     
     
 # Output the following information to a file called disk.html
@@ -27,7 +34,9 @@
 # Output the following information to a file called cpu
     # 1. The first five lines of the command lscpu
     # 2. The last 12 lines of the command lscpu
-    
+    > cpu
+    (lscpu | head -n 5; lscpu | tail -n 12) >> cpu
+
 
 # Output the following information to a file called block_dev
     # 1. Only the name, size, and type of the block devices
