@@ -6,7 +6,8 @@
 
 # Make a directory called System_Stats and change directories to that directory
 # Try to make the output for each file look as neat and organized as you can.
-
+mkdir System_Stats
+cd System_Stats
 # Output the following information to a file called kernel
     # 1. Kernel Name
     # 2. Kernel Release
