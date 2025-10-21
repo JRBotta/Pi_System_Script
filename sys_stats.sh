@@ -1,4 +1,4 @@
-#!/bin/bash
+!/bin/bash
 
 #************************************#
 #******* OUTPUT SYSTEM STATS ********#
@@ -22,6 +22,7 @@
 # Output the following information to a file called disk.html
     # 1. All disks
     # 2. The output should include html tags, i.e. <html></html>
+    sudo lshw -class disk -html  > disk.html
 
 
 # Output the following information to a file called cpu
